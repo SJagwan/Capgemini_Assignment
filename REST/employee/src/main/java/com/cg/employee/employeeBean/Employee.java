@@ -8,9 +8,11 @@ public class Employee {
 	private String empName;
 
 	private double salary;
-
-
 	
+	public Employee() {
+		
+	}
+
 	public Employee(String empName, double salary) {
 		this.empName = empName;
 		this.salary = salary;

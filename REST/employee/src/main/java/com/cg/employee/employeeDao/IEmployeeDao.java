@@ -7,6 +7,12 @@ public interface IEmployeeDao {
 	
 	public void add(Employee e);
 	
-	public List<Employee> displayAll();
+	public Employee findById(int id);
+	
+	public Employee removeEmployee(int id);
+	
+	public void update(Employee e);
+	
+	public List<Employee> fetchAll();
 
 }

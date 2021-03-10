@@ -8,6 +8,12 @@ public interface IEmployeeService {
 	
 	public void add(String name , double salary);
 	
-	public List<Employee> displayAll();
+	public Employee findById(int id);
+	
+	public Employee removeEmployee(int id);
+	
+	public void updateName(int id, String name);
+	
+	public List<Employee> fetchAll();
 
 }
