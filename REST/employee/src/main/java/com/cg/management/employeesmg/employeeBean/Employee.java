@@ -3,6 +3,9 @@ package com.cg.management.employeesmg.employeeBean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.cg.management.departmentmg.deptBean.Department;
 
 @Entity
 public class Employee {
@@ -14,6 +17,9 @@ public class Employee {
 	private String empName;
 
 	private double salary;
+	
+	@ManyToOne
+	private Department department;
 	
 	public Employee() {
 		
@@ -42,8 +48,17 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-
 	
+	
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	
+
 	@Override
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + "]";
