@@ -1,16 +1,18 @@
-package com.cg.employee.employeeService;
+package com.cg.management.employeesmg.employeeService;
 
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
 
-import com.cg.employee.CustomException.InvalidEmployeeIdException;
-import com.cg.employee.CustomException.InvalidEmployeeNameException;
-import com.cg.employee.employeeBean.Employee;
-import com.cg.employee.employeeDao.EmployeeDao;
+import com.cg.management.employeesmg.CustomException.InvalidEmployeeIdException;
+import com.cg.management.employeesmg.CustomException.InvalidEmployeeNameException;
+import com.cg.management.employeesmg.employeeBean.Employee;
+import com.cg.management.employeesmg.employeeDao.EmployeeDao;
 
 @Service
 public class EmployeeService implements IEmployeeService {
@@ -18,6 +20,7 @@ public class EmployeeService implements IEmployeeService {
 	@Autowired
 	public EmployeeDao dao;
 
+	@Transactional
 	@Override
 	public void add(String name, double salary) {
 		validateName(name);
@@ -31,12 +34,14 @@ public class EmployeeService implements IEmployeeService {
 		return dao.findById(id);
 	}
 	
+	@Transactional
 	@Override
-	public Employee removeEmployee(int id) {
+	public void removeEmployee(int id) {
 		validateID(id);
-		return dao.removeEmployee(id);
+		dao.removeEmployee(id);
 	}
 	
+	@Transactional
 	@Override
 	public void updateName(int id, String name){
 		validateName(name);

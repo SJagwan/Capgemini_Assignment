@@ -1,4 +1,4 @@
-package com.cg.employee.dto;
+package com.cg.management.employeesmg.dto;
 
 public class AddEmployeeRequest {
 	private String name;

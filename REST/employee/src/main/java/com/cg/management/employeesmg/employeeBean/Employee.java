@@ -1,8 +1,14 @@
-package com.cg.employee.employeeBean;
+package com.cg.management.employeesmg.employeeBean;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class Employee {
 
+	@Id
+	@GeneratedValue
 	private int empId;
 
 	private String empName;

@@ -1,8 +1,8 @@
-package com.cg.employee.employeeService;
+package com.cg.management.employeesmg.employeeService;
 
 import java.util.List;
 
-import com.cg.employee.employeeBean.Employee;
+import com.cg.management.employeesmg.employeeBean.Employee;
 
 public interface IEmployeeService {
 	
@@ -10,7 +10,7 @@ public interface IEmployeeService {
 	
 	public Employee findById(int id);
 	
-	public Employee removeEmployee(int id);
+	public void removeEmployee(int id);
 	
 	public void updateName(int id, String name);
 	

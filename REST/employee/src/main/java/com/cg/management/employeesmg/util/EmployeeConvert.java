@@ -1,12 +1,12 @@
-package com.cg.employee.util;
+package com.cg.management.employeesmg.util;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.cg.employee.dto.EmployeeDetails;
-import com.cg.employee.employeeBean.Employee;
+import com.cg.management.employeesmg.dto.EmployeeDetails;
+import com.cg.management.employeesmg.employeeBean.Employee;
 
 @Component
 public class EmployeeConvert {

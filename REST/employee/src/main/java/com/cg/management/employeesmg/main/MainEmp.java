@@ -1,15 +1,15 @@
-package com.cg.employee.main;
+package com.cg.management.employeesmg.main;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.cg.employee.CustomException.EmployeeNotFoundException;
-import com.cg.employee.CustomException.InvalidEmployeeIdException;
-import com.cg.employee.CustomException.InvalidEmployeeNameException;
-import com.cg.employee.employeeBean.Employee;
-import com.cg.employee.employeeService.EmployeeService;
+import com.cg.management.employeesmg.CustomException.EmployeeNotFoundException;
+import com.cg.management.employeesmg.CustomException.InvalidEmployeeIdException;
+import com.cg.management.employeesmg.CustomException.InvalidEmployeeNameException;
+import com.cg.management.employeesmg.employeeBean.Employee;
+import com.cg.management.employeesmg.employeeService.EmployeeService;
 
 @Component
 public class MainEmp {
@@ -25,8 +25,6 @@ public class MainEmp {
 			
 			display(employeeService.findById(1));
 			
-			
-			display(employeeService.removeEmployee(2));
 			
 			displayAll(employeeService.fetchAll());
 			

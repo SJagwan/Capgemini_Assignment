@@ -1,4 +1,4 @@
-package com.cg.employee.controllers;
+package com.cg.management.employeesmg.controllers;
 
 import java.util.List;
 
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.employee.dto.AddEmployeeRequest;
-import com.cg.employee.dto.EmployeeDetails;
-import com.cg.employee.dto.EmployeeNameRequest;
-import com.cg.employee.employeeBean.Employee;
-import com.cg.employee.employeeService.EmployeeService;
-import com.cg.employee.util.EmployeeConvert;
+import com.cg.management.employeesmg.dto.AddEmployeeRequest;
+import com.cg.management.employeesmg.dto.EmployeeDetails;
+import com.cg.management.employeesmg.dto.EmployeeNameRequest;
+import com.cg.management.employeesmg.employeeBean.Employee;
+import com.cg.management.employeesmg.employeeService.EmployeeService;
+import com.cg.management.employeesmg.util.EmployeeConvert;
 
 @RequestMapping("/employees")
 @RestController
@@ -39,23 +39,23 @@ public class EmployeeController {
 	List<EmployeeDetails> detail=convert.toDetailList(e);
 	return detail;
 	}
-	
+	@ResponseStatus(HttpStatus.FOUND)
 	@GetMapping("/byid/{id}")
 	public EmployeeDetails findEmployee(@PathVariable int id){
 		Employee e=employeeService.findById(id);
 	    return convert.toDetail(e);
 	}
-	
+	@ResponseStatus(HttpStatus.ACCEPTED)
 	@PutMapping("/update")
 	public String UpdateEmployeeName(@RequestBody EmployeeNameRequest requestData){
 	employeeService.updateName(requestData.getId(), requestData.getName());
-	return "Employee Updated";
+	return "Employee with id-> "+ requestData.getId() +" <-Updated";
 	}
 	
 	@DeleteMapping("/delete/{id}")
 	public String deleteEmployee(@PathVariable int id){
-		Employee e=employeeService.removeEmployee(id);
-		String str="Employee with id "+e.getEmpId()+" get removed";
+		employeeService.removeEmployee(id);
+		String str="Employee with id-> "+id+" <- get removed";
 	    return str;
 	}
 	
@@ -63,7 +63,7 @@ public class EmployeeController {
 	@PostMapping("/add")
 	public String addEmployee(@RequestBody AddEmployeeRequest requestData) {
 	   employeeService.add(requestData.getName(),requestData.getSalary());
-	   return "New Employee Added Properly";
+	   return "New Employee with name-> " + requestData.getName()+" <- Added Properly";
 	}
 
 }

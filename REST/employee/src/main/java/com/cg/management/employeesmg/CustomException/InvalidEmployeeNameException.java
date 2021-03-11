@@ -1,4 +1,4 @@
-package com.cg.employee.CustomException;
+package com.cg.management.employeesmg.CustomException;
 
 public class InvalidEmployeeNameException extends RuntimeException {
 	public InvalidEmployeeNameException(String msg) {

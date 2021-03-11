@@ -1,4 +1,4 @@
-package com.cg.employee;
+package com.cg.management;
 
 
 
@@ -6,7 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.cg.employee.main.MainEmp;
+
+import com.cg.management.employeesmg.main.MainEmp;
 
 @SpringBootApplication
 public class EmployeeApplication {

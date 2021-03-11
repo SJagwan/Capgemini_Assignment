@@ -1,7 +1,7 @@
-package com.cg.employee.employeeDao;
+package com.cg.management.employeesmg.employeeDao;
 import java.util.List;
 
-import com.cg.employee.employeeBean.Employee;
+import com.cg.management.employeesmg.employeeBean.Employee;
 
 public interface IEmployeeDao {
 	
@@ -9,7 +9,7 @@ public interface IEmployeeDao {
 	
 	public Employee findById(int id);
 	
-	public Employee removeEmployee(int id);
+	public void removeEmployee(int id);
 	
 	public void update(Employee e);
 	
